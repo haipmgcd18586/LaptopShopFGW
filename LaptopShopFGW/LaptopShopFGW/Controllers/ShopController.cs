@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LaptopShopFGW.Models.BUS;
+using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,15 +11,17 @@ namespace LaptopShopFGW.Controllers
     public class ShopController : Controller
     {
         // GET: Shop
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, int pagesize = 4)
         {
-            return View();
+            var db = ShopOnlineBUS.List().ToPagedList(page, pagesize);
+            return View(db);
         }
 
         // GET: Shop/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(String id)
         {
-            return View();
+            var db = ShopOnlineBUS.Details(id);
+            return View(db);
         }
 
         // GET: Shop/Create
