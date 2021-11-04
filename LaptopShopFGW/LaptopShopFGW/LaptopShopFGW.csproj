@@ -129,11 +129,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\MainAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProducerAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductTypeAdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BUS\ProducerBUS.cs" />
     <Compile Include="Models\BUS\ShopOnlineBUS.cs" />
     <Compile Include="Models\Generated\Database.cs">
       <AutoGen>True</AutoGen>
@@ -144,19 +150,32 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\AssetAdmin\assets\demo\chart-area-demo.js" />
+    <Content Include="Areas\AssetAdmin\assets\demo\chart-bar-demo.js" />
+    <Content Include="Areas\AssetAdmin\assets\demo\chart-pie-demo.js" />
+    <Content Include="Areas\AssetAdmin\assets\demo\datatables-demo.js" />
+    <Content Include="Areas\AssetAdmin\assets\img\error-404-monochrome.svg" />
+    <Content Include="Areas\AssetAdmin\css\styles.css" />
+    <Content Include="Areas\AssetAdmin\js\datatables-simple-demo.js" />
+    <Content Include="Areas\AssetAdmin\js\scripts.js" />
     <Content Include="Asset\css\bootstrap.min.css" />
     <Content Include="Asset\css\font-awesome.min.css" />
     <Content Include="Asset\css\owl.carousel.css" />
     <Content Include="Asset\css\responsive.css" />
     <Content Include="Asset\fonts\fontawesome-webfont.svg" />
     <Content Include="Asset\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Asset\img\AddProducer.png" />
+    <Content Include="Asset\img\AddProduct.png" />
     <Content Include="Asset\img\brand1.png" />
     <Content Include="Asset\img\brand2.png" />
     <Content Include="Asset\img\brand3.png" />
     <Content Include="Asset\img\brand4.png" />
     <Content Include="Asset\img\brand5.png" />
     <Content Include="Asset\img\brand6.png" />
+    <Content Include="Asset\img\Close.png" />
     <Content Include="Asset\img\crossword.png" />
+    <Content Include="Asset\img\Delete.png" />
+    <Content Include="Asset\img\Edit.png" />
     <Content Include="Asset\img\h4-slide.png" />
     <Content Include="Asset\img\h4-slide2.png" />
     <Content Include="Asset\img\h4-slide3.png" />
@@ -204,6 +223,17 @@
     <Content Include="Asset\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Models\Generated\PetaPoco.Generator.ttinclude" />
     <Content Include="Models\Generated\PetaPoco.Core.ttinclude" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_MainLayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\MainAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProducerAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductTypeAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductTypeAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProducerAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ProducerAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProducerAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProducerAdmin\DeleteTT.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -235,6 +265,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

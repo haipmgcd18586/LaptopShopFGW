@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ShopOnlineConnection.Producer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 60%;
+        margin:auto;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    th {
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+    <h2>Manage Producer</h2>
+
+    <table>
+        <tr>
+            <th>ProducerID</th>
+            <th>ProducerName</th>
+            <th>Tình Trạng</th>
+            <th colspan="2"><a href="@Url.Action("Create", "ProducerAdmin")"><img src="~/Asset/img/AddProducer.png" style="margin-left: 20%;" /></a></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProducerID</td>
+                <td>@item.ProducerName</td>
+                <td>@item.TinhTrang</td>
+                <td><a href="@Url.Action("DeleteTT", "ProducerAdmin", new { id = item.ProducerID})"><img src="~/Asset/img/Delete.png" /></a></td>
+                <td><a href="@Url.Action("Edit", "ProducerAdmin", new { id = item.ProducerID})"><img src="~/Asset/img/Edit.png" /></a></td>
+            </tr>
+        }
+
+
+    </table>
+
