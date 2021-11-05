@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LaptopShopFGW.Models.BUS;
+using ShopOnlineConnection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,12 +8,13 @@ using System.Web.Mvc;
 
 namespace LaptopShopFGW.Areas.Admin.Controllers
 {
-    public class ProductTypeAdminController : Controller
+    public class TypeProductAdminController : Controller
     {
         // GET: Admin/ProductTypeAdmin
         public ActionResult Index()
         {
-            return View();
+            var db = TypeProductBUS.ListAdmin();
+            return View(db);
         }
 
         // GET: Admin/ProductTypeAdmin/Details/5
@@ -28,12 +31,12 @@ namespace LaptopShopFGW.Areas.Admin.Controllers
 
         // POST: Admin/ProductTypeAdmin/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(TypeProduct lsp)
         {
             try
             {
                 // TODO: Add insert logic here
-
+                TypeProductBUS.InsertLSP(lsp);
                 return RedirectToAction("Index");
             }
             catch
@@ -43,19 +46,20 @@ namespace LaptopShopFGW.Areas.Admin.Controllers
         }
 
         // GET: Admin/ProductTypeAdmin/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(String id)
         {
-            return View();
+            var db = TypeProductBUS.DetailsAdmin(id);
+            return View(db);
         }
 
         // POST: Admin/ProductTypeAdmin/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(String id, TypeProduct lsp)
         {
             try
             {
                 // TODO: Add update logic here
-
+                TypeProductBUS.EditLSP(id, lsp);
                 return RedirectToAction("Index");
             }
             catch
@@ -78,6 +82,30 @@ namespace LaptopShopFGW.Areas.Admin.Controllers
             {
                 // TODO: Add delete logic here
 
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Admin/ProductTypeAdmin/XoaTamThoi/5
+        public ActionResult XoaTamThoi(String id)
+        {
+            var db = TypeProductBUS.DetailsAdmin(id);
+            return View(db);
+        }
+
+        // POST: Admin/ProductTypeAdmin/Delete/5
+        [HttpPost]
+        public ActionResult XoaTamThoi(String id, TypeProduct lsp)
+        {
+            try
+            {
+                // TODO: Add delete logic here
+                lsp.TinhTrang = "1";
+                TypeProductBUS.EditLSP(id, lsp);
                 return RedirectToAction("Index");
             }
             catch

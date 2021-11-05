@@ -133,7 +133,7 @@
     <Compile Include="Areas\Admin\Controllers\MainAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProducerAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ProductTypeAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TypeProductAdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Global.asax.cs">
@@ -141,6 +141,7 @@
     </Compile>
     <Compile Include="Models\BUS\ProducerBUS.cs" />
     <Compile Include="Models\BUS\ShopOnlineBUS.cs" />
+    <Compile Include="Models\BUS\TypeProductBUS.cs" />
     <Compile Include="Models\Generated\Database.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -228,12 +229,14 @@
     <Content Include="Areas\Admin\Views\MainAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ProductAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ProducerAdmin\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\ProductTypeAdmin\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\ProductTypeAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\TypeProductAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\TypeProductAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\ProducerAdmin\Details.cshtml" />
     <Content Include="Areas\Admin\Views\ProducerAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\ProducerAdmin\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\ProducerAdmin\DeleteTT.cshtml" />
+    <Content Include="Areas\Admin\Views\TypeProductAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\TypeProductAdmin\XoaTamThoi.cshtml" />
+    <Content Include="Areas\Admin\Views\ProducerAdmin\XoaTamThoi.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

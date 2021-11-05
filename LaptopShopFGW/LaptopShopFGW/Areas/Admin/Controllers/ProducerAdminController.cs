@@ -89,5 +89,27 @@ namespace LaptopShopFGW.Areas.Admin.Controllers
                 return View();
             }
         }
+        public ActionResult XoaTamThoi(String id)
+        {
+            var db = ProducerBUS.DetailsAdmin(id);
+            return View(db);
+        }
+
+        // POST: Admin/ProductTypeAdmin/Delete/5
+        [HttpPost]
+        public ActionResult XoaTamThoi(String id, Producer nsx)
+        {
+            try
+            {
+                // TODO: Add delete logic here
+                nsx.TinhTrang = "1";
+                ProducerBUS.UpdateProducer(id, nsx);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ShopOnlineConnection.TypeProduct>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<h2>Index ProductType</h2>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 60%;
+        margin: auto;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    th {
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+<h2>Manage TypeProduct</h2>
+
+<table>
+    <tr>
+        <th>TypeProductID</th>
+        <th>TypeProductName</th>
+        <th>Tinh Trang</th>
+        
+        <th colspan="2"><a href="@Url.Action("Create", "TypeProductAdmin")"><img src="~/Asset/img/AddProducer.png" style="margin-left: 20%;" /></a></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.TypeProductID</td>
+            <td>@item.TypeProductName</td>
+            <td>@item.TinhTrang</td>
+            
+            <td><a href="@Url.Action("XoaTamThoi", "TypeProductAdmin", new { id = item.TypeProductID})"><img src="~/Asset/img/Delete.png" /></a></td>
+            <td><a href="@Url.Action("Edit", "TypeProductAdmin", new { id = item.TypeProductID})"><img src="~/Asset/img/Edit.png" /></a></td>
+        </tr>
+    }
+
+
+</table>
+
+

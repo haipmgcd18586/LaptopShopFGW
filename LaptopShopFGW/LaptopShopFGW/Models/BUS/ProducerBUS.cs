@@ -42,6 +42,12 @@ namespace LaptopShopFGW.Models.BUS
             var db = new ShopOnlineConnectionDB();
             db.Update(nsx, id);
         }
-        
+        public static void DeleteNSX(String id, Producer nsx)
+        {
+            var db = new ShopOnlineConnectionDB();
+            db.Update(nsx, id);
+
+        }
+
     }
 }

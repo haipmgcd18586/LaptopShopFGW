@@ -40,7 +40,7 @@
                 <td>@item.ProducerID</td>
                 <td>@item.ProducerName</td>
                 <td>@item.TinhTrang</td>
-                <td><a href="@Url.Action("DeleteTT", "ProducerAdmin", new { id = item.ProducerID})"><img src="~/Asset/img/Delete.png" /></a></td>
+                <td><a href="@Url.Action("XoaTamThoi", "ProducerAdmin", new { id = item.ProducerID})"><img src="~/Asset/img/Delete.png" /></a></td>
                 <td><a href="@Url.Action("Edit", "ProducerAdmin", new { id = item.ProducerID})"><img src="~/Asset/img/Edit.png" /></a></td>
             </tr>
         }

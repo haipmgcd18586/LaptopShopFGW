@@ -257,11 +257,9 @@ namespace ShopOnlineConnection
 
 		[Column] public string TinhTrang { get; set; }
 
-        internal object ToPageList()
-        {
-            throw new NotImplementedException();
-        }
-    }
+
+
+	}
 
     
 
@@ -332,6 +330,12 @@ namespace ShopOnlineConnection
 
 
 		[Column] public string TypeProductName { get; set; }
+
+
+
+
+
+		[Column] public string TinhTrang { get; set; }
 
 
 
